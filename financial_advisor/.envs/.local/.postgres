@@ -1,0 +1,7 @@
+# PostgreSQL
+# ------------------------------------------------------------------------------
+POSTGRES_HOST=postgres
+POSTGRES_PORT=5432
+POSTGRES_DB=financial_advisor
+POSTGRES_USER=qIFhrnAoNrHWrqnnlNaoOCbtYvakcTGW
+POSTGRES_PASSWORD=6bIPFLWanSKHojOGcJmgRZXPTphDRsKzHRoCju1ibQR1uda3EHAz6wOh8tYwKKz7
