@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}
+Wallet | {{ user.username }}
+{% endblock title %}
+{% block content %}
+  <div class="container">
+    <div class="row">
+        <h1>Welcome, {{ user.username }}</h1>
+        <h2>Cash Balance: {{ user.cash }}</h2>
+        
+        <h3>Expenses</h3>
+        <ul>
+            {% for expense in expenses %}
+                <li>{{ expense.description }}: {{ expense.amount }}</li>
+            {% endfor %}
+        </ul>
+        
+        <h3>Incomes</h3>
+        <ul>
+            {% for income in incomes %}
+                <li>{{ income.description }}: {{ income.amount }}</li>
+            {% endfor %}
+        </ul>
+  </div>
+</div>
+{% endblock content %}

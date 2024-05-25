@@ -273,6 +273,7 @@ dump.rdb
 
 ### Project template
 financial_advisor/media/
+financial_advisor/.envs
 
 .pytest_cache/
 .ipython/

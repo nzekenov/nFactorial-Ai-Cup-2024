@@ -19,6 +19,7 @@ urlpatterns = [
     # User management
     path("users/", include("financial_advisor.users.urls", namespace="users")),
     path("accounts/", include("allauth.urls")),
+    path("wallet/", include("financial_advisor.wallet.urls", namespace="wallet")),
     # Your stuff: custom urls includes go here
     # ...
     # Media files
