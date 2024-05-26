@@ -38,6 +38,11 @@ WORKDIR ${APP_HOME}
 RUN apt-get update && apt-get install --no-install-recommends -y \
   sudo git bash-completion nano ssh
 
+  RUN apt-get update && apt-get install -y \
+  libsndfile1 \
+  ffmpeg \
+  && rm -rf /var/lib/apt/lists/*
+
 # Create devcontainer user and add it to sudoers
 RUN groupadd --gid 1000 dev-user \
   && useradd --uid 1000 --gid dev-user --shell /bin/bash --create-home dev-user \

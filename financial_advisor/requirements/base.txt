@@ -20,3 +20,7 @@ django-redis==5.4.0  # https://github.com/jazzband/django-redis
 
 python-telegram-bot
 openai
+soundfile
+audioread
+numpy
+pydub

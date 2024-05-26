@@ -16,7 +16,6 @@ class User(AbstractUser):
     name = CharField(_("Name of User"), blank=True, max_length=255)
     first_name = None  # type: ignore[assignment]
     last_name = None  # type: ignore[assignment]
-    cash = DecimalField(max_digits=10, decimal_places=2, default=0.00)
     country = CharField("Country", blank=True, max_length=255, default="Kazakhstan")
 
     def get_absolute_url(self) -> str:
@@ -27,3 +26,10 @@ class User(AbstractUser):
 
         """
         return reverse("users:detail", kwargs={"username": self.username})
+
+
+    @property
+    def cash(self):
+        total_income = self.income_set.aggregate(Sum('amount'))['amount__sum'] or 0
+        total_expense = self.expense_set.aggregate(Sum('amount'))['amount__sum'] or 0
+        return total_income - total_expense
