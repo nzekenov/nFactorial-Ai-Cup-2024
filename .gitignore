@@ -280,3 +280,5 @@ financial_advisor/.envs
 .env
 .envs/*
 # !.envs/.local/
+
+financial_advisor/.envs
